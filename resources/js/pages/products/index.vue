@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import Button from '@/components/ui/button/Button.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -20,7 +21,9 @@ defineProps<{
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="p-4">
-            <h1>test</h1>
+            <Link :href="route('products.create')">
+                <Button>Create Product page</Button>
+            </Link>
         </div>
     </AppLayout>
 </template>
