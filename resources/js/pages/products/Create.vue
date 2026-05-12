@@ -67,7 +67,7 @@ defineProps<{
                     />
                     <div class="text-red-500 text-sm" v-if="form.errors.price">{{ form.errors.price }}</div>
                 </div>
-                <Button>Add a Product</Button>
+                <Button type="submit" :disabled="form.processing">Add a Product</Button> <!-- disable button while processing to prevent multiple submissions -->
             </form>
         </div>
     </AppLayout>
