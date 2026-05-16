@@ -44,7 +44,7 @@ const props = defineProps<Props>();
                     </AlertDescription>
                 </Alert>
             </div>
-            <div>
+            <div class="mb-4">
                 <Link :href="route('products.create')">
                     <Button>Create Product page</Button>
                 </Link>
@@ -68,7 +68,11 @@ const props = defineProps<Props>();
                             <TableCell>{{ product.price }}</TableCell>
                             <TableCell>{{ product.description }}</TableCell>
                             <TableCell class="text-center">
-                                Edit | Delete
+                                <Button class="bg-yellow-400">
+                                    <Link :href="route('products.edit', { id: product.id })">
+                                        Edit
+                                    </Link>
+                                </Button>
                             </TableCell>
                         </TableRow>
                     </TableBody>
